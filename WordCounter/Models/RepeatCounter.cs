@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace WordCounter.Models
 {
@@ -7,13 +8,15 @@ namespace WordCounter.Models
     {
         private string Sentence;
         private string Word;
+        private char[] AcceptableCharacters=
+        {'!',',','.','/',';',':','"','%','(',')','?'};
         private int CharacterMatchCounter;
         private int WordMatchCounter = 0;
 
         public RepeatCounter(string sentence, string word)
         {
             Sentence = sentence;
-            Word = word;
+            Word = " " + word + " ";
         }
 
         public string GetSentence()
@@ -34,33 +37,44 @@ namespace WordCounter.Models
         {
             for (int i = 0; i<arrayBeingSearched.Length; ++i)
             {
+                CharacterMatchCounter = 0;
                 if(arrayBeingSearched[i]==wordToSearchFor[0])
                 {
-                    CharacterMatchCounter = 0;
-                    for (int j = 0; j<wordToSearchFor.Length; j++)
+                    
+                    for(int j = 0; j<wordToSearchFor.Length; ++j)
                     {
-                        this.ReturnNumberOfMatches();
-                    }
-                }
-                else if(i==0 && arrayBeingSearched[i]==wordToSearchFor[1])
-                {
-                    for (int j = 1; j<wordToSearchFor.Length; j++)
-                    {
-                        CharacterMatchCounted++;
-                        if(wordToSearchFor[j]==arrayBeingSearched[i])
+                        if( i<arrayBeingSearched.Length&&wordToSearchFor[j]==arrayBeingSearched[i])
                         {
                             ++CharacterMatchCounter;
                             ++i;
-                            Console.WriteLine(CharacterMatchCounter);
-                            if(CharacterMatchCounter==wordToSearchFor.Length)
+                            if (CharacterMatchCounter==wordToSearchFor.Length)
                             {
-                                WordMatchCounter++;
-                                Console.WriteLine(WordMatchCounter);
+                                ++WordMatchCounter;
+                                Console.WriteLine("Match number " +WordMatchCounter);
                             }
                         }
+                        
                     }
-                }
 
+                }
+                else if((i==0 && wordToSearchFor[1]==arrayBeingSearched[i]) || AcceptableCharacters.Contains(arrayBeingSearched[i]))
+                {
+                    ++CharacterMatchCounter;
+                    for(int j=1; j<wordToSearchFor.Length; ++j)
+                    {
+                        if(i<=arrayBeingSearched.Length&&(wordToSearchFor[j]==arrayBeingSearched[i] || (j==wordToSearchFor.Length-1 && AcceptableCharacters.Contains(arrayBeingSearched[i]))))
+                        {
+                            ++CharacterMatchCounter;
+                            ++i;
+                        }
+                        if (CharacterMatchCounter==wordToSearchFor.Length)
+                        {
+                            WordMatchCounter++;
+                            Console.WriteLine("Match number " + WordMatchCounter);
+                        }
+                        
+                    }        
+                }
                 else
                 {
     
