@@ -12,7 +12,7 @@ namespace WordCounter
             Console.WriteLine("Give me a word to match");
             string inputWord = Console.ReadLine();
             RepeatCounter counter = new RepeatCounter(inputString, inputWord);
-            counter.SetSentenceArray();
+            counter.SetCharArrays();
         }
     }
 }

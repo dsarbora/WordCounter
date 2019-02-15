@@ -37,16 +37,30 @@ namespace WordCounter.Models
                 if(arrayBeingSearched[i]==wordToSearchFor[0])
                 {
                     CharacterMatchCounter = 0;
-                    for(int j = 0; j<wordToSearchFor.Length; j++)
+                    for (int j = 0; j<wordToSearchFor.Length; j++)
                     {
+                        this.ReturnNumberOfMatches();
+                    }
+                }
+                else if(i==0 && arrayBeingSearched[i]==wordToSearchFor[1])
+                {
+                    for (int j = 1; j<wordToSearchFor.Length; j++)
+                    {
+                        CharacterMatchCounted++;
                         if(wordToSearchFor[j]==arrayBeingSearched[i])
                         {
-                            CharacterMatchCounter++;
+                            ++CharacterMatchCounter;
+                            ++i;
                             Console.WriteLine(CharacterMatchCounter);
+                            if(CharacterMatchCounter==wordToSearchFor.Length)
+                            {
+                                WordMatchCounter++;
+                                Console.WriteLine(WordMatchCounter);
+                            }
                         }
                     }
-
                 }
+
                 else
                 {
     
