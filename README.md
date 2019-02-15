@@ -9,12 +9,18 @@
 
 ## _Specifications_
 
-| Sentence Input | Word Input | Condition | Expected Output|
-|----------------|------------|-----------|----------------|
-|Dog             |Cat         |           |"Match not found"|
-|----------------|------------|-----------|----------------|
+| Sentence Input | Word To Search | Expected Output|
+|----------------|----------------|----------------|
+|Cat             |Dog             |Match not found|
+|----------------|----------------|----------------|
+|Dogs and dogs!--|Dog             |Match not found|
+|Dog             |Dog             |           |Found 1 match for dog|
+|----------------|----------------|----------------|
+|Dog and dog!     |----------------|Found 2 matches for dog|
 
 ## _Setup/Installation Requirements_
+* _Clone the project from [https://github.com/dsarbora/WordCounter](https://github.com/dsarbora/WordCounter)
+* _Navigate to WordCounter.Solution/WordCounter/ in the command line and run the file Program.exe_
 
 ## _Known Bugs_
 _No bugs are known at this time._
