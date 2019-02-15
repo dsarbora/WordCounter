@@ -9,6 +9,11 @@
 
 ## _Specifications_
 
+| Sentence Input | Word Input | Condition | Expected Output|
+|----------------|------------|-----------|----------------|
+|Dog             |Cat         |           |"Match not found"|
+|----------------|------------|-----------|----------------|
+
 ## _Setup/Installation Requirements_
 
 ## _Known Bugs_
