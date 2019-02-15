@@ -15,6 +15,14 @@ namespace WordCounter.Tests
             RepeatCounter testCounter = new RepeatCounter(sentence, word);
             Assert.AreEqual (sentence, testCounter.GetSentence());
         }
+        [TestMethod]
+        public void SearchArray_CanFindMatch_Int()
+        {
+            string sentence = "You can do that.";
+            string word = "can";
+            RepeatCounter testCounter = new RepeatCounter(sentence, word);
+            Assert.AreEqual (1, testCounter.SetCharArrays());
+        }
 
     }
 }

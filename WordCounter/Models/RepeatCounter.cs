@@ -26,11 +26,11 @@ namespace WordCounter.Models
 
 
 
-        public void SetCharArrays()
+        public int SetCharArrays()
         {
             char[] sentenceArray = Sentence.ToCharArray();
             char[] wordArray = Word.ToCharArray();
-            this.DisplayMessage(this.SearchArray(sentenceArray, wordArray));        
+            this.DisplayMessage(this.SearchArray(sentenceArray, wordArray));   
         }
 
         public int SearchArray(char[] arrayBeingSearched, char[] wordToSearchFor)
@@ -59,27 +59,8 @@ namespace WordCounter.Models
                         }    
                     }
                 }
-                else if((i==0 && wordToSearchFor[1]==arrayBeingSearched[i]) || AcceptableCharacters.Contains(arrayBeingSearched[i]))
-                {
-                    ++CharacterMatchCounter;
-                    for(int j=1; j<wordToSearchFor.Length; ++j)
-                    {
-                        if(i<=arrayBeingSearched.Length&&(wordToSearchFor[j]==arrayBeingSearched[i] || (j==wordToSearchFor.Length-1 && AcceptableCharacters.Contains(arrayBeingSearched[i]))))
-                        {
-                            ++CharacterMatchCounter;
-                            ++i;
-                        }
-                        if (CharacterMatchCounter==wordToSearchFor.Length)
-                        {
-                            WordMatchCounter++;
-                            Console.WriteLine("Match number " + WordMatchCounter);
-                        }
-                        
-                    }        
-                }
             }
             return WordMatchCounter;
-
         }
 
         public void DisplayMessage(int matches)

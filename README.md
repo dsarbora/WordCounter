@@ -5,7 +5,7 @@
 #### _By **Dave Sarbora**_
 
 ## _Description_
-
+_This program finds matches in words by looping through a character array, comparing each letter to the first letter of a second array made from word we are searching for. A " " is added to the beginning and end of each array so that only complete words will be matched, but it will also match certain acceptable characters such as punctuation marks that may surround a word.
 
 ## _Specifications_
 
