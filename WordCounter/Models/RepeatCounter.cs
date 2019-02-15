@@ -38,12 +38,12 @@ namespace WordCounter.Models
             for (int i = 0; i<arrayBeingSearched.Length; ++i)
             {
                 CharacterMatchCounter = 0;
-                if(arrayBeingSearched[i]==wordToSearchFor[0])
+                if(arrayBeingSearched[i]==wordToSearchFor[0] || AcceptableCharacters.Contains(arrayBeingSearched[i]))
                 {
                     
                     for(int j = 0; j<wordToSearchFor.Length; ++j)
                     {
-                        if( i<arrayBeingSearched.Length&&wordToSearchFor[j]==arrayBeingSearched[i])
+                        if( i<=arrayBeingSearched.Length&&(wordToSearchFor[j]==arrayBeingSearched[i]||AcceptableCharacters.Contains(arrayBeingSearched[i])))
                         {
                             ++CharacterMatchCounter;
                             ++i;
