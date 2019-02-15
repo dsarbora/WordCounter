@@ -21,7 +21,7 @@
 * _Navigate to WordCounter.Solution/WordCounter/ in the command line and run the file Program.exe_
 
 ## _Known Bugs_
-_No bugs are known at this time._
+_As of right now the program will not count a word if it begins with one of the "AcceptableCharacters."_
 
 ## _Support and Contact Details_
 _Contact me at [dsarbora@gmail.com](dsarbora@gmail.com)_
