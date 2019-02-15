@@ -1,0 +1,17 @@
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\obj\Debug\netcoreapp1.1\WordCounter.Test.csprojAssemblyReference.cache
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\obj\Debug\netcoreapp1.1\WordCounter.Test.csproj.CoreCompileInputs.cache
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\obj\Debug\netcoreapp1.1\WordCounter.Test.AssemblyInfoInputs.cache
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\obj\Debug\netcoreapp1.1\WordCounter.Test.AssemblyInfo.cs
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\bin\Debug\netcoreapp1.1\WordCounter.Test.deps.json
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\bin\Debug\netcoreapp1.1\WordCounter.Test.runtimeconfig.json
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\bin\Debug\netcoreapp1.1\WordCounter.Test.runtimeconfig.dev.json
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\bin\Debug\netcoreapp1.1\WordCounter.Test.dll
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\bin\Debug\netcoreapp1.1\WordCounter.Test.pdb
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\bin\Debug\netcoreapp1.1\WordCounter.dll
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\bin\Debug\netcoreapp1.1\WordCounter.pdb
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\obj\Debug\netcoreapp1.1\WordCounter.Test.csproj.CopyComplete
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\obj\Debug\netcoreapp1.1\WordCounter.Test.dll
+C:\Users\Dave\source\repos\WordCounter.Solution\WordCounter.Tests\obj\Debug\netcoreapp1.1\WordCounter.Test.pdb

@@ -9,14 +9,12 @@
 
 ## _Specifications_
 
-| Sentence Input | Word To Search | Expected Output|
-|----------------|----------------|----------------|
-|Cat             |Dog             |Match not found|
-|----------------|----------------|----------------|
-|Dogs and dogs!--|Dog             |Match not found|
-|Dog             |Dog             |           |Found 1 match for dog|
-|----------------|----------------|----------------|
-|Dog and dog!     |----------------|Found 2 matches for dog|
+| Sentence Input | Word To Search | Expected Output        |
+|----------------|----------------|------------------------|
+|Cat             |Dog             |Match not found.        |
+|Dogs and dogs!--|Dog             |Match not found.        |
+|Dog             |Dog             |Found 1 match for dog.  |
+|Dog and dog!    |Dog             |Found 2 matches for dog.|
 
 ## _Setup/Installation Requirements_
 * _Clone the project from [https://github.com/dsarbora/WordCounter](https://github.com/dsarbora/WordCounter)
