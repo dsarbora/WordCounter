@@ -54,6 +54,10 @@ namespace WordCounter.Models
             return WordMatchCounter;
         }
 
+        public bool CheckMatch()
+        {
+        }
+
         public string DisplayMessage(int matches)
         {
             if(matches == 0)
