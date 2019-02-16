@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace WordCounter.Models
 {
@@ -39,7 +37,6 @@ namespace WordCounter.Models
                     WordMatchCounter++;
                 }
             }
-                
             return WordMatchCounter;
         }
 
@@ -53,7 +50,6 @@ namespace WordCounter.Models
             {
                 return false;
             }
-
         }
 
         public void ShowMatches(int matches)
