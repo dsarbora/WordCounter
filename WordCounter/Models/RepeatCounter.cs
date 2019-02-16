@@ -8,71 +8,54 @@ namespace WordCounter.Models
     {
         private string Sentence;
         private string Word;
-        private char[] AcceptableCharacters=
-        {'!',',','.','/',';',':','"','%','(',')','?'};
+        
         private int CharacterMatchCounter;
         private int WordMatchCounter = 0;
 
         public RepeatCounter(string sentence, string word)
         {
-            Sentence = " " + sentence + " ";
-            Word = " " + word + " ";
+            Sentence = sentence;
+            Word = word;
         }
-
         public string GetSentence()
         {
             return Sentence;
         }
-        public string SetCharArrays()
+        public string GetWord()
         {
-            char[] sentenceArray = Sentence.ToCharArray();
-            char[] wordArray = Word.ToCharArray();
-            return this.DisplayMessage(this.SearchArray(sentenceArray, wordArray));   
+            return Word;
         }
 
-        public int SearchArray(char[] arrayBeingSearched, char[] wordToSearchFor)
+        public string[] GetSentenceArray()
         {
-            for (int i = 0; i<arrayBeingSearched.Length; ++i)
+            string[] sentenceArray = Sentence.Split(new char[]{' ',',','.',':','!','"'});
+            return sentenceArray;
+        }
+
+        public void LoopArray(string[] sentArr)
+        {
+            foreach(string word in sentArr)
             {
-                CharacterMatchCounter = 0;
-                if(arrayBeingSearched[i]==wordToSearchFor[0]||AcceptableCharacters.Contains(arrayBeingSearched[i]))
+                if (this.IsMatch(word, Word))
                 {
-                    for(int j = 0; j<wordToSearchFor.Length; ++j)
-                    {
-                        if( i<arrayBeingSearched.Length&&(AcceptableCharacters.Contains(arrayBeingSearched[i])||wordToSearchFor[j]==arrayBeingSearched[i]))
-                        {
-                            ++CharacterMatchCounter;
-                            ++i;
-                            if (CharacterMatchCounter==wordToSearchFor.Length)
-                            {
-                                ++WordMatchCounter;
-                            }
-                        }    
-                    }
+                    WordMatchCounter++;
                 }
             }
-            return WordMatchCounter;
+                
+            Console.WriteLine(WordMatchCounter + " matches");
         }
 
-        public bool CheckMatch()
+        public bool IsMatch(string word, string word2)
         {
-        }
-
-        public string DisplayMessage(int matches)
-        {
-            if(matches == 0)
+            if(word == word2)
             {
-                Console.WriteLine("Match not found.");
-            }
-            else if(matches == 1)
-            {
-                Console.WriteLine("Found 1 match for"+Word);
+                return true;
             }
             else
             {
-                Console.WriteLine("Found " + matches + " matches for"+Word);
+                return false;
             }
-        }
 
+        }
     }
 }

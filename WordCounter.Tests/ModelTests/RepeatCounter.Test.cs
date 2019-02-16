@@ -16,11 +16,14 @@ namespace WordCounter.Tests
             Assert.AreEqual (sentence, testCounter.GetSentence());
         }
         [TestMethod]
-        public void SearchArray_CanFindMatch_Int()
+        public void IsMatch_CanFindMatch_Bool()
         {
-            string sentence = "You can do that.";
+            string sentence = "Yes I can";
             string word = "can";
             RepeatCounter testCounter = new RepeatCounter(sentence, word);
+            string comparison = testCounter.GetSentenceArray()[2];
+            Assert.AreEqual(true, testCounter.IsMatch(comparison, word));
+
             
         }
 

@@ -12,7 +12,8 @@ namespace WordCounter
             Console.WriteLine("Give me a word to match");
             string inputWord = Console.ReadLine();
             RepeatCounter counter = new RepeatCounter(inputString, inputWord);
-            Console.WriteLine(counter.SetCharArrays());
+            counter.LoopArray(counter.GetSentenceArray());
+
         }
     }
 }
