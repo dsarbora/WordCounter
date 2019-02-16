@@ -5,7 +5,7 @@
 #### _By **Dave Sarbora**_
 
 ## _Description_
-_This program finds matches in words by looping through a character array, comparing each letter to the first letter of a second array made from word we are searching for. A " " is added to the beginning and end of each array so that only complete words will be matched, but it will also match certain acceptable characters such as punctuation marks that may surround a word.
+_This program asks for a sentence from a user, and then a word to match within the sentence. It finds the number of matches within the word by splitting the word into an array of strings, delineated by spaces or punctuation markings. It then compares each word in the array to the search term and increments a counter each time it finds a match. Finally, the value of the counter is printed to the console. 
 
 ## _Specifications_
 
@@ -21,7 +21,7 @@ _This program finds matches in words by looping through a character array, compa
 * _Navigate to WordCounter.Solution/WordCounter/ in the command line and run the file Program.exe_
 
 ## _Known Bugs_
-_As of right now the program will not count a word if it begins with one of the "AcceptableCharacters."_
+_The search term must be a single word without any punctuation markings to return any matches due to the way the program splits the original string._
 
 ## _Support and Contact Details_
 _Contact me at [dsarbora@gmail.com](dsarbora@gmail.com)_

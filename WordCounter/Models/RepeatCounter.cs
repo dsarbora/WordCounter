@@ -14,8 +14,8 @@ namespace WordCounter.Models
 
         public RepeatCounter(string sentence, string word)
         {
-            Sentence = sentence;
-            Word = word;
+            Sentence = sentence.ToLower();
+            Word = word.ToLower();
         }
         public string GetSentence()
         {
@@ -28,11 +28,11 @@ namespace WordCounter.Models
 
         public string[] GetSentenceArray()
         {
-            string[] sentenceArray = Sentence.Split(new char[]{' ',',','.',':','!','"'});
+            string[] sentenceArray = Sentence.Split(new char[]{' ',',','.',':','!','"','?'});
             return sentenceArray;
         }
 
-        public void LoopArray(string[] sentArr)
+        public int CheckArray(string[] sentArr)
         {
             foreach(string word in sentArr)
             {
@@ -42,7 +42,7 @@ namespace WordCounter.Models
                 }
             }
                 
-            Console.WriteLine(WordMatchCounter + " matches");
+            return WordMatchCounter;
         }
 
         public bool IsMatch(string word, string word2)
@@ -56,6 +56,22 @@ namespace WordCounter.Models
                 return false;
             }
 
+        }
+
+        public void ShowMatches(int matches)
+        {
+            if(matches==0)
+            {
+                Console.WriteLine("Match not found.");
+            }
+            else if(matches==1)
+            {
+                Console.WriteLine("Found 1 match for "+Word+".");
+            }
+            else
+            {
+                Console.WriteLine("Found "+matches+" matches for "+Word+".");
+            }
         }
     }
 }
