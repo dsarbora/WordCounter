@@ -21,7 +21,7 @@ namespace WordCounter.Tests
             string sentence = "You can do that.";
             string word = "can";
             RepeatCounter testCounter = new RepeatCounter(sentence, word);
-            Assert.AreEqual (1, testCounter.SetCharArrays());
+            
         }
 
     }
