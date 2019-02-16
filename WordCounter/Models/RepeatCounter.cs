@@ -8,8 +8,6 @@ namespace WordCounter.Models
     {
         private string Sentence;
         private string Word;
-        
-        private int CharacterMatchCounter;
         private int WordMatchCounter = 0;
 
         public RepeatCounter(string sentence, string word)
