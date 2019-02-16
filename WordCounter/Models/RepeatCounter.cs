@@ -58,15 +58,15 @@ namespace WordCounter.Models
         {
             if(matches == 0)
             {
-                Console.WriteLine("I couldn't find a match.");
+                Console.WriteLine("Match not found.");
             }
             else if(matches == 1)
             {
-                Console.WriteLine("One item matched.");
+                Console.WriteLine("Found 1 match for"+Word);
             }
             else
             {
-                Console.WriteLine("I found you " + matches + " matches.");
+                Console.WriteLine("Found " + matches + " matches for"+Word);
             }
         }
 
