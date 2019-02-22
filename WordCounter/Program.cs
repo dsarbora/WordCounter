@@ -1,18 +1,21 @@
-using System;
+using System.IO;
 using WordCounter.Models;
+using Microsoft.AspNetCore.Hosting;
 
 namespace WordCounter
 {
     class Program
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Give me a sentence");
-            string inputString = Console.ReadLine();
-            Console.WriteLine("Give me a word to match");
-            string inputWord = Console.ReadLine();
-            RepeatCounter counter = new RepeatCounter(inputString, inputWord);
-            counter.ShowMatches(counter.CheckArray(counter.GetSentenceArray()));
+            var host = new WebHostBuilder()
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseStartup<Startup>()
+                .Build();
+
+            host.Run();
 
         }
     }
