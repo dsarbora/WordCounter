@@ -1,74 +1,88 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace WordCounter.Models
 {
     public class RepeatCounter
     {
+        private static List<RepeatCounter> Instances=new List<RepeatCounter>();
+        private int Id;
+        private static int CurrentId=-1;
         private string Sentence;
         private string Word;
-        private char[] AcceptableCharacters=
-        {'!',',','.','/',';',':','"','%','(',')','?'};
-        private int CharacterMatchCounter;
-        private int WordMatchCounter = 0;
+        private int Matches = 0;
 
         public RepeatCounter(string sentence, string word)
         {
-            Sentence = " " + sentence + " ";
-            Word = " " + word + " ";
+            Sentence = sentence.ToLower();
+            Word = word.ToLower();
+            Instances.Add(this);
+            Id = CurrentId+1;
+            RepeatCounter.CurrentId+=1;
         }
-
         public string GetSentence()
         {
             return Sentence;
         }
-        public string SetCharArrays()
+        public string GetWord()
         {
-            char[] sentenceArray = Sentence.ToCharArray();
-            char[] wordArray = Word.ToCharArray();
-            return this.DisplayMessage(this.SearchArray(sentenceArray, wordArray));   
+            return Word;
         }
 
-        public int SearchArray(char[] arrayBeingSearched, char[] wordToSearchFor)
+        public string[] GetSentenceArray()
         {
-            for (int i = 0; i<arrayBeingSearched.Length; ++i)
+            string[] sentenceArray = Sentence.Split(new char[]{' ',',','.',':','!','"','?'});
+            return sentenceArray;
+        }
+
+        public int CheckArray(string[] sentArr)
+        {
+            foreach(string word in sentArr)
             {
-                CharacterMatchCounter = 0;
-                if(arrayBeingSearched[i]==wordToSearchFor[0]||AcceptableCharacters.Contains(arrayBeingSearched[i]))
+                if (this.IsMatch(word, Word))
                 {
-                    for(int j = 0; j<wordToSearchFor.Length; ++j)
-                    {
-                        if( i<arrayBeingSearched.Length&&(AcceptableCharacters.Contains(arrayBeingSearched[i])||wordToSearchFor[j]==arrayBeingSearched[i]))
-                        {
-                            ++CharacterMatchCounter;
-                            ++i;
-                            if (CharacterMatchCounter==wordToSearchFor.Length)
-                            {
-                                ++WordMatchCounter;
-                            }
-                        }    
-                    }
+                    Matches++;
                 }
             }
-            return WordMatchCounter;
+            return Matches;
         }
 
-        public string DisplayMessage(int matches)
+        public bool IsMatch(string word, string word2)
         {
-            if(matches == 0)
+            if(word == word2)
             {
-                Console.WriteLine("Match not found.");
-            }
-            else if(matches == 1)
-            {
-                Console.WriteLine("Found 1 match for"+Word);
+                return true;
             }
             else
             {
-                Console.WriteLine("Found " + matches + " matches for"+Word);
+                return false;
             }
         }
 
+        public void ShowMatches(int matches)
+        {
+            if(matches==0)
+            {
+                Console.WriteLine("Match not found.");
+            }
+            else if(matches==1)
+            {
+                Console.WriteLine("Found 1 match for "+Word+".");
+            }
+            else
+            {
+                Console.WriteLine("Found "+matches+" matches for "+Word+".");
+            }
+        }
+
+        public int GetMatches()
+        {
+            return Matches;
+        }
+        
+        public static RepeatCounter Find()
+        {
+            return Instances[CurrentId];
+        }
     }
 }
