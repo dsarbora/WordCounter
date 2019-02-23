@@ -6,10 +6,11 @@ namespace WordCounter.Controllers
     public class RepeatCounterController : Controller
     {
         [HttpGet("/repeatcounter")]
-        public ActionResult Index(string sentence, string word)
+        public ActionResult Index()
         {
-            RepeatCounter repeatCounter = new RepeatCounter(sentence, word);
-            return View(repeatCounter);
+            var model = RepeatCounter.Find();
+            
+            return View(model);
         }
         [HttpGet("/repeatcounter/new")]
         public ActionResult New()
@@ -18,10 +19,13 @@ namespace WordCounter.Controllers
         }
 
         [HttpPost("/repeatcounter")]
-        public ActionResult FindMatches(string sentence, string word)
+        public ActionResult Create(string sentence, string word)
         {
-        
-
+            RepeatCounter repeatCounter = new RepeatCounter(sentence, word);
+            string[] sentArr = repeatCounter.GetSentenceArray();
+            repeatCounter.CheckArray(sentArr);
+            
+            return RedirectToAction("Index", repeatCounter);
         }
     }
 }

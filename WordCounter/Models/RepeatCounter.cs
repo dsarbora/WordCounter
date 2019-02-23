@@ -1,17 +1,24 @@
 using System;
+using System.Collections.Generic;
 
 namespace WordCounter.Models
 {
     public class RepeatCounter
     {
+        private static List<RepeatCounter> Instances=new List<RepeatCounter>();
+        private int Id;
+        private static int CurrentId=-1;
         private string Sentence;
         private string Word;
-        private int WordMatchCounter = 0;
+        private int Matches = 0;
 
         public RepeatCounter(string sentence, string word)
         {
             Sentence = sentence.ToLower();
             Word = word.ToLower();
+            Instances.Add(this);
+            Id = CurrentId+1;
+            RepeatCounter.CurrentId+=1;
         }
         public string GetSentence()
         {
@@ -34,10 +41,10 @@ namespace WordCounter.Models
             {
                 if (this.IsMatch(word, Word))
                 {
-                    WordMatchCounter++;
+                    Matches++;
                 }
             }
-            return WordMatchCounter;
+            return Matches;
         }
 
         public bool IsMatch(string word, string word2)
@@ -66,6 +73,21 @@ namespace WordCounter.Models
             {
                 Console.WriteLine("Found "+matches+" matches for "+Word+".");
             }
+        }
+
+        public int GetMatches()
+        {
+            return Matches;
+        }
+        
+        public static RepeatCounter Find()
+        {
+            return Instances[CurrentId];
+        }
+
+        public string GetPlural()
+        {
+            return "s";
         }
     }
 }
