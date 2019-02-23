@@ -84,10 +84,5 @@ namespace WordCounter.Models
         {
             return Instances[CurrentId];
         }
-
-        public string GetPlural()
-        {
-            return "s";
-        }
     }
 }
