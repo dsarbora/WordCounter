@@ -1,7 +1,40 @@
 @using WordCounter.Models;
+@{
+    Layout="_Layout";
+}
 <h1>Welcome the Repeat Counter Homepage</h1>
 <h3>Here you can review some basic facts acout the matches in your sentence</h3>
-
-<p>In your original sentence, "@Model.GetSentence()," the number of times the word "@Model.GetWord()" appears is @Model.GetMatches().</p>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-title">
+                <h3>Original Sentence</h3>
+            </div>
+            <div class="panel-body">
+                <p>@Model.GetSentence()</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-title">
+               <h3>Search Word</h3> 
+            </div>
+            <div class="panel-body">
+                <p>@Model.GetWord()</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-title">
+                <h3>Matches</h3>
+            </div>
+            <div class="panel-body">
+                <p>@Model.GetMatches()</p>
+            </div>
+        </div>
+    </div>
+</div>
 <br>
 <p><a href="repeatcounter/new">Try another search.</a></p>
