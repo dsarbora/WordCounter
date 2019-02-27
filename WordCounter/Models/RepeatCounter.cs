@@ -14,8 +14,8 @@ namespace WordCounter.Models
 
         public RepeatCounter(string sentence, string word)
         {
-            Sentence = sentence.ToLower();
-            Word = word.ToLower();
+            Sentence = sentence;
+            Word = word;
             Instances.Add(this);
             Id = CurrentId+1;
             RepeatCounter.CurrentId+=1;
@@ -31,15 +31,17 @@ namespace WordCounter.Models
 
         public string[] GetSentenceArray()
         {
-            string[] sentenceArray = Sentence.Split(new char[]{' ',',','.',':','!','"','?'});
+            string sentence = Sentence.ToLower();
+            string[] sentenceArray = sentence.Split(new char[]{' ',',','.',':','!','"','?'});
             return sentenceArray;
         }
 
         public int CheckArray(string[] sentArr)
         {
+            string targetWord = Word.ToLower();
             foreach(string word in sentArr)
             {
-                if (this.IsMatch(word, Word))
+                if (this.IsMatch(word, targetWord))
                 {
                     Matches++;
                 }

@@ -4,9 +4,12 @@
 <h1>Fill in the form below to start counting for repeat words</h1>
 <h3>Enter a sentence and a word, and we'll look for that word in the sentence</h3>
 <form action="/repeatcounter" method="post">
-    <label for="sentence">Sentence: </label>
-    <input id="sentence" name="sentence" type="text">
-    <label for="word">Word: </label>
-    <input id="word" name="word" type="text">
-    <button type="submit">Submit!</button>
+    <div class ="form-group"> 
+        <label for="sentence">Sentence: </label>
+        <input class="form-control" id="sentence" name="sentence" type="text">
+    </div>
+    <div class="form-group">
+        <label for="word">Word: </label>
+        <input class="form-control" id="word" name="word" type="text">
+    <button class = "btn btn-info animated shake" type="submit">Submit!</button>
 </form>
