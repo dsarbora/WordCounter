@@ -25,18 +25,7 @@ namespace WordCounter.Tests
             ActionResult newView = testController.New();
             Assert.IsInstanceOfType (newView, typeof(ViewResult));
         }
-        // [TestMethod]
-        // public void Create_RedirectsToIndex_True()
-        // {
-        //     RepeatCounterController testController = new RepeatCounterController();
-        //     string cat = "cat";
-        //     string bear = "bear";
-        //     ActionResult createView = testController.Create(cat, bear);
-        //     ViewResult indexView = testController.Index() as ViewResult;
-        //     var result = indexView.ViewData.Model;
-        //     Assert.IsInstanceOfType (result, typeof(RepeatCounter));
-
-        // }
+        
 
     }
 }

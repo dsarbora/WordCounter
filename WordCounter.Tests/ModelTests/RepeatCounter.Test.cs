@@ -12,8 +12,8 @@ namespace WordCounter.Tests
             string sentence = "You can't do that.";
             string word = "Do";
             RepeatCounter testCounter = new RepeatCounter(sentence, word);
-            string sentenceLower=sentence.ToLower();
-            Assert.AreEqual (sentenceLower, testCounter.GetSentence());
+            //string sentenceLower=sentence.ToLower();
+            Assert.AreEqual (sentence, testCounter.GetSentence());
         }
         [TestMethod]
         public void IsMatch_CanFindMatch_Bool()
